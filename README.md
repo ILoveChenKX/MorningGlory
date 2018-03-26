@@ -1,6 +1,7 @@
 # MorningGlory
 闲暇时间汉化点LLVM文档。工作量非常大所以可能全部汉化完要等到LLVM10发布了。
 这里的原文基于LLVM6 Release
+[在线版](http://morningglory.readthedocs.io/en/latest/)
 
 # 一些事实
 - 这些翻译可能语句不通，事实不准确或漏翻，由于:

@@ -22,16 +22,11 @@ LLVM代码表示是为了以三种形式使用而设计的:作为一个内存中
 效的编译器代码变形和分析提供一个强大的的中间表示形式并与此同时提供自然的图像化和调试
 变形过程的方案。这三种表达形式都是等价的，这份文档描述了人类理解形式下的表达和注解方式。
 
-The LLVM representation aims to be light-weight and low-level while
-being expressive, typed, and extensible at the same time. It aims to be
-a "universal IR" of sorts, by being at a low enough level that
-high-level ideas may be cleanly mapped to it (similar to how
-microprocessors are "universal IR's", allowing many source languages to
-be mapped to them). By providing type information, LLVM can be used as
-the target of optimizations: for example, through pointer analysis, it
-can be proven that a C automatic variable is never accessed outside of
-the current function, allowing it to be promoted to a simple SSA value
-instead of a memory location.
+LLVM表示的目标是在轻量和底层的同时富有表达性，强类型并且可拓展。它目标通过在身处一个
+低到足以让高级别的想法能够被干净的映射到其上(就像微处理器的汇编指令也是"通用中间表示"
+以允许高级语言映射到其上一样)的层面成为一个某种意义上的"通用中间表示"。通过提供类型信
+息，LLVM可以被通过优化的目标。比如说通过指针分析，可以证明一个C的局部变量从不会在当前
+函数外被引用，因此可以将它提升到一个简单的SSA值而不是内存地址。
 
 .. _wellformed:
 
