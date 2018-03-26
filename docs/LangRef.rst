@@ -30,35 +30,28 @@ LLVM表示的目标是在轻量和底层的同时富有表达性，强类型并�
 
 .. _wellformed:
 
-Well-Formedness
+良好的形式
 ---------------
 
-It is important to note that this document describes 'well formed' LLVM
-assembly language. There is a difference between what the parser accepts
-and what is considered 'well formed'. For example, the following
-instruction is syntactically okay, but not well formed:
+值得注意的是这篇文档描述的是所谓'良好形式的'LLVM中间表示。识别器能识别的中间表示和好形式
+的中间表示这两者是有区别的。比如下面的指令语法上是正确的，但并不是良好的形式，因为``%x``
+的定义并不支配他的所有使用。
 
 .. code-block:: llvm
 
     %x = add i32 1, %x
 
-because the definition of ``%x`` does not dominate all of its uses. The
-LLVM infrastructure provides a verification pass that may be used to
-verify that an LLVM module is well formed. This pass is automatically
-run by the parser after parsing input assembly and by the optimizer
-before it outputs bitcode. The violations pointed out by the verifier
-pass indicate bugs in transformation passes or input to the parser.
+LLVM基础设施提供了一个可以被用于验证一个LLVM模块是否拥有良好形势的验证流程来。这个流程会在
+识别器识别完成输入的中间表示后被自动的运行，也会被优化器在输出字节码之前运行。识别流程指出的
+问题说明了变形流程或是输入的中间表示中的Bug。
 
 .. _identifiers:
 
-Identifiers
+识别符
 ===========
 
-LLVM identifiers come in two basic types: global and local. Global
-identifiers (functions, global variables) begin with the ``'@'``
-character. Local identifiers (register names, types) begin with the
-``'%'`` character. Additionally, there are three different formats for
-identifiers, for different purposes:
+LLVM的识别符有两种类型: 全局和本地。 全局识别符(函数,全局变量)以``'@'``字符开头。本地识别
+符(寄存器名，类型)以``'%'``字符开头。 另外, 识别符还有三种不同的格式，用于不同的目的:
 
 #. Named values are represented as a string of characters with their
    prefix. For example, ``%foo``, ``@DivisionByZero``,
