@@ -12,4 +12,4 @@
 - **保证会在某个时段弃坑**
 
 # 编译
-从rst编译成HTML的方法在``READMEORIG.txt``中。简单的说你需要一个原版的[LLVM6源码树](http://releases.llvm.org/6.0.0/llvm-6.0.0.src.tar.xz) 并将这里的所有文件覆盖``docs/``下后按照``READMEORIG.txt``的描述进行编译
+你需要用Python的pip安装``Sphinx``,然后cd到本项目的根目录，执行``sphinx-build ./docs /你选择的/生成内容/保存路径``

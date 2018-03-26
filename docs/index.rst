@@ -1,7 +1,7 @@
 Overview
 ========
 
-LLVM编译基础设施广泛支持各种项目,从工业强度的编译器到小型约束研究类的JIT应用
+LLVM编译基础设施广泛支持各种项目,从工业强度的编译器到小型学术研究类的JIT应用
 
 因此，文档也被分成多个高阶分类，用于给不同目的的读者阅读。
 
@@ -317,7 +317,7 @@ For API clients and LLVM developers.
 :doc:`Vectorizers`
    This document describes the current status of vectorization in LLVM.
 
-:doc:`异常处理`
+:doc:`ExceptionHandling`
    这个文档描述了LLVM中的异常处理的设计和实现。
 
 :doc:`Bugpoint`
@@ -339,7 +339,7 @@ For API clients and LLVM developers.
    How to build your programs with link-time optimization on Linux.
 
 :doc:`DebuggingJITedCode`
-   How to debug JITed code with GDB.
+   如何用GDB调试JIT生成的代码
 
 :doc:`MCJITDesignAndImplementation`
    Describes the inner workings of MCJIT execution engine.
