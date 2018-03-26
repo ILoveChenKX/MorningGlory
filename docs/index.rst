@@ -1,11 +1,11 @@
-Overview
+概览
 ========
 
 LLVM编译基础设施广泛支持各种项目,从工业强度的编译器到小型学术研究类的JIT应用
 
 因此，文档也被分成多个高阶分类，用于给不同目的的读者阅读。
 
-LLVM Design & Overview
+LLVM 设计 & 概览
 ======================
 
 一些介绍性的论文和演讲
@@ -19,12 +19,12 @@ LLVM Design & Overview
   描述了LLVM中间表示
 
 `Introduction to the LLVM Compiler`__
-  Presentation providing a users introduction to LLVM.
+  一个给用户介绍LLVM的演讲
 
   .. __: http://llvm.org/pubs/2008-10-04-ACAT-LLVM-Intro.html
 
-`Intro to LLVM`__
-  Book chapter providing a compiler hacker's introduction to LLVM.
+`LLVM入门`__
+  一本书的章节，描述了编译器黑客如何入门LLVM
 
   .. __: http://www.aosabook.org/en/llvm.html
 
@@ -34,12 +34,12 @@ LLVM Design & Overview
 
   .. __: http://llvm.org/pubs/2004-01-30-CGO-LLVM.html
 
-`LLVM: An Infrastructure for Multi-Stage Optimization`__
-  More details (quite old now).
+`LLVM: 一个多阶段优化的基础设施`__
+  更多的细节 (现在挺老了).
 
   .. __: http://llvm.org/pubs/2002-12-LattnerMSThesis.html
 
-`Publications mentioning LLVM <http://llvm.org/pubs>`_
+`一些提到LLVM的出版物 <http://llvm.org/pubs>`_
    ..
 
 User Guides
@@ -47,7 +47,7 @@ User Guides
 
 给那些LLVM系统的新手
 
-注意: 如果你是个只对基于LLVM的编译器感兴趣的用户, 你应该查阅`Clang <http://clang.llvm.org>`_ 或是
+注意: 如果你是个只对基于LLVM的编译器感兴趣的用户, 你应该查阅 `Clang <http://clang.llvm.org>`_ 或是
 `DragonEgg <http://dragonegg.llvm.org>`_ 的文档而不是本文档。本文档的目标受众是需要对LLVM中间表示进行相关工作的读者。
 
 .. toctree::
@@ -84,9 +84,7 @@ User Guides
    Docker
 
 :doc:`GettingStarted`
-   Discusses how to get up and running quickly with the LLVM infrastructure.
-   Everything from unpacking and compilation of the distribution to execution
-   of some tools.
+   讨论了如何快速设置并运行LLVM基础设施，涵盖了从分发版的解压和编译到一些工具的执行。
 
 :doc:`CMake`
    An addendum to the main Getting Started guide for those using the `CMake
@@ -96,7 +94,7 @@ User Guides
    Notes on building and testing LLVM/Clang on ARM.
 
 :doc:`HowToCrossCompileBuiltinsOnArm`
-   Notes on cross-building and testing the compiler-rt builtins for Arm.
+   关于如何为ARM交叉编译并测试compiler-rt的内置函数
 
 :doc:`HowToCrossCompileLLVM`
    Notes on cross-building and testing LLVM/Clang.
@@ -181,15 +179,13 @@ For developers of applications which use LLVM as a library.
    OptBisect
 
 :doc:`LLVM Language Reference Manual <LangRef>`
-  Defines the LLVM intermediate representation and the assembly form of the
-  different nodes.
+  描述了LLVM不同节点的中间表示和汇编形式。
 
 :doc:`Atomics`
   Information about LLVM's concurrency model.
 
 :doc:`ProgrammersManual`
-  Introduction to the general layout of the LLVM sourcebase, important classes
-  and APIs, and some tips & tricks.
+  介绍LLVM源码树的大致结构，重要的类和API,以及一些提示和技巧。
 
 :doc:`Extensions`
   LLVM-specific extensions to tools and formats LLVM seeks compatibility with.
@@ -296,12 +292,10 @@ For API clients and LLVM developers.
    LLVM's code generation passes.
 
 :doc:`TableGen <TableGen/index>`
-   Describes the TableGen tool, which is used heavily by the LLVM code
-   generator.
+   描述了在LLVM代码生成器中被大量使用的TableGen工具。
 
 :doc:`AliasAnalysis`
-   Information on how to write a new alias analysis implementation or how to
-   use existing analyses.
+   关于如何编写新的别名分析实现或者是如何使用现有的分析。
 
 :doc:`MemorySSA`
    Information about the MemorySSA utility in LLVM, as well as how to use it.
@@ -315,7 +309,7 @@ For API clients and LLVM developers.
    source-level debugger.
 
 :doc:`Vectorizers`
-   This document describes the current status of vectorization in LLVM.
+   这个文档描述了LLVM中的向量化目前的状态
 
 :doc:`ExceptionHandling`
    这个文档描述了LLVM中的异常处理的设计和实现。
