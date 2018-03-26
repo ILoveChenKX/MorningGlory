@@ -45,13 +45,10 @@ LLVM Design & Overview
 User Guides
 ===========
 
-For those new to the LLVM system.
+给那些LLVM系统的新手
 
-NOTE: If you are a user who is only interested in using LLVM-based
-compilers, you should look into `Clang <http://clang.llvm.org>`_ or
-`DragonEgg <http://dragonegg.llvm.org>`_ instead. The documentation here is
-intended for users who have a need to work with the intermediate LLVM
-representation.
+注意: 如果你是个只对基于LLVM的编译器感兴趣的用户, 你应该查阅`Clang <http://clang.llvm.org>`_ 或是
+`DragonEgg <http://dragonegg.llvm.org>`_ 的文档而不是本文档。本文档的目标受众是需要对LLVM中间表示进行相关工作的读者。
 
 .. toctree::
    :hidden:
@@ -284,10 +281,10 @@ For API clients and LLVM developers.
    CFIVerify
 
 :doc:`WritingAnLLVMPass`
-   Information on how to write LLVM transformations and analyses.
+   关于如何编写LLVM IR的变形和分析。
 
 :doc:`WritingAnLLVMBackend`
-   Information on how to write LLVM backends for machine targets.
+   关于如何为目标机器编写LLVM后端
 
 :doc:`CodeGenerator`
    The design and implementation of the LLVM code generator.  Useful if you are
@@ -320,16 +317,15 @@ For API clients and LLVM developers.
 :doc:`Vectorizers`
    This document describes the current status of vectorization in LLVM.
 
-:doc:`ExceptionHandling`
-   This document describes the design and implementation of exception handling
-   in LLVM.
+:doc:`异常处理`
+   这个文档描述了LLVM中的异常处理的设计和实现。
 
 :doc:`Bugpoint`
    Automatic bug finder and test-case reducer description and usage
    information.
 
 :doc:`BitCodeFormat`
-   This describes the file format and encoding used for LLVM "bc" files.
+   这个文档描述了LLVM的"bc"文件的格式。
 
 :doc:`System Library <SystemLibrary>`
    This document describes the LLVM System Library (``lib/System``) and

@@ -1,5 +1,5 @@
 ====================================
-Getting Started with the LLVM System
+LLVM系统入门
 ====================================
 
 .. contents::
@@ -8,96 +8,88 @@ Getting Started with the LLVM System
 Overview
 ========
 
-Welcome to LLVM! In order to get started, you first need to know some basic
-information.
+欢迎来到LLVM! 为了能够入门，你首先需要了解一些基础知识。
 
-First, LLVM comes in three pieces. The first piece is the LLVM suite. This
-contains all of the tools, libraries, and header files needed to use LLVM.  It
-contains an assembler, disassembler, bitcode analyzer and bitcode optimizer.  It
-also contains basic regression tests that can be used to test the LLVM tools and
-the Clang front end.
+首先,LLVM是由三大块构成的。
+第一个部分就是LLVM套件。这包含使用LLVM所需的所有工具，库和头文件。他们
+包含汇编器，反汇编器，字节码分析器和字节码优化器。他也包含一些可以被用来测试LLVM和Clang前端的回归测试。
 
-The second piece is the `Clang <http://clang.llvm.org/>`_ front end.  This
-component compiles C, C++, Objective C, and Objective C++ code into LLVM
-bitcode. Once compiled into LLVM bitcode, a program can be manipulated with the
-LLVM tools from the LLVM suite.
+第二个部分就是`Clang <http://clang.llvm.org/>`_ 前端。  这个部分将C, C++, Objective C,
+和Objective C++代码编译成LLVM字节码。在编译成LLVM字节码后，就可使用LLVM套件中的工具来操作输入的程序。
 
-There is a third, optional piece called Test Suite.  It is a suite of programs
-with a testing harness that can be used to further test LLVM's functionality
-and performance.
+还有第三个可选的组件被称之为测试套件。这是一系列可以被用来测量LLVM的功能和性能的测试。
 
-Getting Started Quickly (A Summary)
+快速入门 (一个总计)
 ===================================
 
-The LLVM Getting Started documentation may be out of date.  So, the `Clang
-Getting Started <http://clang.llvm.org/get_started.html>`_ page might also be a
-good place to start.
+LLVM的快速入门文档可能会有些过时，因此 `Clang
+快速入门 <http://clang.llvm.org/get_started.html>`_ 页面可能会是个好开始。
 
-Here's the short story for getting up and running quickly with LLVM:
+这里是快速将LLVM编译运行起来的一些小贴士:
 
-#. Read the documentation.
-#. Read the documentation.
-#. Remember that you were warned twice about reading the documentation.
+#. 读文档
+#. 读文档
+#. 记住你被提醒了两次读文档
 
-   * In particular, the *relative paths specified are important*.
+   * 特别的,*相对路径非常重要*.
 
-#. Checkout LLVM:
+#. 获得LLVM源码:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm``
 
-#. Checkout Clang:
+#. 获得Clang源码:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/tools``
    * ``svn co http://llvm.org/svn/llvm-project/cfe/trunk clang``
 
-#. Checkout Extra Clang Tools **[Optional]**:
+#. 获得额外的Clang工具源码 **[可选]**:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/tools/clang/tools``
    * ``svn co http://llvm.org/svn/llvm-project/clang-tools-extra/trunk extra``
 
-#. Checkout LLD linker **[Optional]**:
+#. 获得LLD链接器源码 **[可选]**:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/tools``
    * ``svn co http://llvm.org/svn/llvm-project/lld/trunk lld``
 
-#. Checkout Polly Loop Optimizer **[Optional]**:
+#. 获得Polly循环优化器源码 **[可选]**:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/tools``
    * ``svn co http://llvm.org/svn/llvm-project/polly/trunk polly``
 
-#. Checkout Compiler-RT (required to build the sanitizers) **[Optional]**:
+#. 获得Compiler-RT源码 (required to build the sanitizers) **[可选]**:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/projects``
    * ``svn co http://llvm.org/svn/llvm-project/compiler-rt/trunk compiler-rt``
 
-#. Checkout Libomp (required for OpenMP support) **[Optional]**:
+#. Checkout Libomp (required for OpenMP support) **[可选]**:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/projects``
    * ``svn co http://llvm.org/svn/llvm-project/openmp/trunk openmp``
 
-#. Checkout libcxx and libcxxabi **[Optional]**:
+#. Checkout libcxx and libcxxabi **[可选]**:
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/projects``
    * ``svn co http://llvm.org/svn/llvm-project/libcxx/trunk libcxx``
    * ``svn co http://llvm.org/svn/llvm-project/libcxxabi/trunk libcxxabi``
 
-#. Get the Test Suite Source Code **[Optional]**
+#. Get the Test Suite Source Code **[可选]**
 
-   * ``cd where-you-want-llvm-to-live``
+   * ``cd 你想-存放-LLVM-源码-的-地方``
    * ``cd llvm/projects``
    * ``svn co http://llvm.org/svn/llvm-project/test-suite/trunk test-suite``
 
-#. Configure and build LLVM and Clang:
+#. 配置并编译LLVM和Clang:
 
-   *Warning:* Make sure you've checked out *all of* the source code
+   *警告:* Make sure you've checked out *all of* the source code
    before trying to configure with cmake.  cmake does not pickup newly
    added source directories in incremental builds.
 
@@ -234,7 +226,7 @@ Package                                                     Version      Notes
       info.
    #. Only needed if you want to run the automated test suite in the
       ``llvm/test`` directory.
-   #. Optional, adds compression / uncompression capabilities to selected LLVM
+   #. 可选, adds compression / uncompression capabilities to selected LLVM
       tools.
 
 Additionally, your compilation host is expected to have the usual plethora of
@@ -435,7 +427,7 @@ Unpacking the LLVM Archives
 If you have the LLVM distribution, you will need to unpack it before you can
 begin to compile it.  LLVM is distributed as a set of two files: the LLVM suite
 and the LLVM GCC front end compiled for your platform.  There is an additional
-test suite that is optional.  Each file is a TAR archive that is compressed with
+test suite that is 可选.  Each file is a TAR archive that is compressed with
 the gzip program.
 
 The files are as follows, with *x.y* marking the version number:
@@ -457,7 +449,7 @@ If you have access to our Subversion repository, you can get a fresh copy of the
 entire source code.  All you need to do is check it out from Subversion as
 follows:
 
-* ``cd where-you-want-llvm-to-live``
+* ``cd 你想-存放-LLVM-源码-的-地方``
 * Read-Only: ``svn co http://llvm.org/svn/llvm-project/llvm/trunk llvm``
 * Read-Write: ``svn co https://user@llvm.org/svn/llvm-project/llvm/trunk llvm``
 
@@ -520,7 +512,7 @@ If you want to check out libomp (required for OpenMP support), run:
   % cd llvm/projects
   % git clone https://git.llvm.org/git/openmp.git/
 
-If you want to check out libcxx and libcxxabi (optional), run:
+If you want to check out libcxx and libcxxabi (可选), run:
 
 .. code-block:: console
 
@@ -528,7 +520,7 @@ If you want to check out libcxx and libcxxabi (optional), run:
   % git clone https://git.llvm.org/git/libcxx.git/
   % git clone https://git.llvm.org/git/libcxxabi.git/
 
-If you want to check out the Test Suite Source Code (optional), run:
+If you want to check out the Test Suite Source Code (可选), run:
 
 .. code-block:: console
 
@@ -965,7 +957,7 @@ For example:
     % find lib/Support/ -name APFloat*
     lib/Support/CMakeFiles/LLVMSupport.dir/APFloat.cpp.o
 
-Optional Configuration Items
+可选 Configuration Items
 ----------------------------
 
 If you're running on a Linux system that supports the `binfmt_misc
@@ -1124,7 +1116,7 @@ the `Command Guide <CommandGuide/index.html>`_.
 ``llvm-ar``
 
   The archiver produces an archive containing the given LLVM bitcode files,
-  optionally with an index for faster lookup.
+  可选ly with an index for faster lookup.
 
 ``llvm-as``
 
